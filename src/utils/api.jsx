@@ -1,13 +1,12 @@
 // external api (REST) calls
 var Fetch = require('whatwg-fetch');
-var rootUrl = 'https://api.imgur.com/3/';
-var apiKey = '50842d5bb6938ea';
+var Config = require('../utils/config');
 
 module.exports = window.api = {
   get: function (url) {
-    return fetch(rootUrl + url, {
+    return fetch(Config.rootUrl + url, {
       headers: {
-        'Authorization': 'Client-ID ' + apiKey
+        'Authorization': 'Client-ID ' + Config.apiKey
       }
     })
     .then(function (response) {
