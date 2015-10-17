@@ -1,7 +1,9 @@
 var Api = require('../utils/api');
 var Reflux = require('reflux');
+var Actions = require('../actions');
 
 var TopicStore = Reflux.createStore({
+  listenables: [Actions],
   getTopics: function () {
     return Api.get('topics/defaults')
       .then(function (json) {
