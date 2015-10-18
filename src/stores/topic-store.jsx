@@ -1,5 +1,6 @@
 var Api = require('../utils/api');
 var Reflux = require('reflux');
+
 var Actions = require('../actions');
 
 var TopicStore = Reflux.createStore({
